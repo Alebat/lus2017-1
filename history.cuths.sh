@@ -39,4 +39,4 @@ done > prediction.raw.csv
 cat prediction.raw.csv | sed 's/^[0-9]*\t[0-9\.]*$/-X-/' | sed -r 's/^[0-9\ ]+$/-X-/' | sed '/<eps>/d' | cut -f 4 | paste NLSPARQL.test.data - | sed 's/.*-X-//' > prediction.csv
 
 # Evaluation
-cat prediction.csv | tr '\t' ' ' | ./conlleval.pl -l > eval.txt
+cat prediction.csv | tr '\t' ' ' | ./conlleval.pl > eval.cuths.txt
