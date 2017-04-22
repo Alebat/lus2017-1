@@ -1,6 +1,6 @@
 # Adding more annotations to corpus
 cat NLSPARQL.train.feats.txt | cut -f 2 - > corpus2.csv
-cat NLSPARQL.train.data | cut -f 1 | paste -d - corpus2.csv - > corpus3.csv
+cat NLSPARQL.train.data | cut -f 1 | paste -d - - corpus2.csv > corpus3.csv
 cat NLSPARQL.train.data | cut -f 2 | paste corpus3.csv - | sed 's/^-.*//' > corpus2.csv
 
 # To create the CSV of training occurrences plus <unk> entries
